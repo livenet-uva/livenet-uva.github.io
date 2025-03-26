@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="LiveNet: Robust, Minimally Invasive Multi-Robot Control for Safe and Live Navigation in Constrained Environments">
+        content="Multi-Agent Inverse Reinforcement Learning in Real World Unstructured Pedestrian Crowds">
   <meta name="keywords" content="LiveNet, BarrierNet, CBFs">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LiveNet</title>
+  <title>MAIRL</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -51,19 +51,27 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LiveNet: Robust, Minimally Invasive Multi-Robot Control for Safe and Live Navigation in Constrained Environments</h1>
+          <h1 class="title is-2 publication-title">Multi-Agent Inverse Reinforcement Learning in Real World Unstructured Pedestrian Crowds</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://srikarg89.github.io/">Srikar Gouru</a>,</span>
-            <span class="author-block">
-              <a href="https://github.com/sidlakkoju">Siddharth Lakkoju</a>,</span>
-            <span class="author-block">
               <a href="https://engineering.virginia.edu/faculty/rohan-chandra">Rohan Chandra</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://hareshkarnan.github.io/">Haresh Karnan</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://negarmehr.com/">Negar Mehr</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.utexas.edu/~pstone/">Peter Stone</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.joydeepb.com/">Joydeep Biswas</a>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">University of Virginia</span>
+            <span class="author-block">UVA, UC Berkeley, UT Austin</span>
           </div>
 
           <!-- Links -->
@@ -72,8 +80,8 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2412.04659"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/pdf/2405.16439"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -81,8 +89,8 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2412.04659"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/pdf/2405.16439"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
@@ -91,12 +99,12 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/srikarg89/LiveNet"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/ut-amrl/bluecity_example/tree/MA-IRL"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Data</span>
                   </a>
               </span>
             </div>
@@ -108,7 +116,8 @@
 </section>
 
 <section class="hero">
-  <div class="container is-max-desktop">
+  <!-- <div class="container is-max-desktop">
+
     <div class="video-grid">
       <div class="video-container">
           <video src="static/LiveNet_Doorway.mp4" controls autoplay loop muted></video>
@@ -167,7 +176,7 @@
     });
   </script>
 
-  <br><br>
+  <br><br> -->
   
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -175,7 +184,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Robots in densely populated real-world environments frequently encounter constrained and cluttered situations such as passing through narrow doorways, hallways, and corridor intersections, where conflicts over limited space result in collisions or deadlocks among the robots. Current decentralized state-of-the-art optimization- and neural network-based approaches (i) are predominantly designed for general open spaces, and (ii) are overly conservative, either guaranteeing safety, or liveness, but not both. While some solutions rely on centralized conflict resolution, their highly invasive trajectories make them impractical for real-world deployment. This paper introduces LiveNet, a fully decentralized and robust neural network controller that enables human-like yielding and passing, resulting in agile, non-conservative, deadlock-free, and safe, navigation in congested, conflict-prone spaces. LiveNet is minimally invasive, without requiring inter-agent communication or cooperative behavior. The key insight behind LiveNet is a unified CBF formulation for simultaneous safety and liveness, which we integrate within a neural network for robustness. We evaluated LiveNet in simulation and found that general multi-robot optimization- and learning-based navigation methods fail to even reach the goal, and while methods designed specially for such environments do succeed, they are 10-20 times slower, 4-5 times more invasive, and much less robust to variations in the scenario configuration such as changes in the start states and goal states, among others. We open-source the LiveNet code <a href="https://github.com/srikarg89/LiveNet">here</a>.
+            Social robot navigation in crowded public spaces such as university campuses, restaurants, grocery stores, and hospitals, is an increasingly important area of research. One of the core strategies for achieving this goal is to understand humans' intent--underlying psychological factors that govern their motion--by learning how humans assign rewards to their actions, typically via inverse reinforcement learning (IRL). Despite significant progress in IRL, learning reward functions of multiple agents simultaneously in dense unstructured pedestrian crowds has remained intractable due to the nature of the tightly coupled social interactions that occur in these scenarios e.g. passing, intersections, swerving, weaving, etc. In this paper, we present a new multi-agent maximum entropy inverse reinforcement learning algorithm for real world unstructured pedestrian crowds. Key to our approach is a simple, but effective, mathematical trick which we name the so-called "tractability-rationality trade-off" trick that achieves tractability at the cost of a slight reduction in accuracy. We compare our approach to the classical single-agent MaxEnt IRL as well as state-of-the-art trajectory prediction methods on several datasets including the ETH, UCY, SCAND, JRDB, and a new dataset, called Speedway, collected at a busy intersection on a University campus focusing on dense, complex agent interactions. Our key findings show that, on the dense Speedway dataset, our approach ranks 1^st among top 7 baselines with > 2X improvement over single-agent IRL, and is competitive with state-of-the-art large transformer-based encoder-decoder models on sparser datasets such as ETH/UCY (ranks 3^rd among top 7 baselines).
           </p>
         </div>
       </div>
@@ -187,13 +196,13 @@
   <div class="container is-max-desktop">
 <!-- <div class="image-grid">
   <div class="image-container"> -->
-      <img src="./static/images/graphs1.png" alt="Image 1">
-      <p class="image-title">LiveNet's obstacle dCBF, liveness dCBF, and deviation from desired path in Doorway scenario.</p>
+      <img src="./static/images/overview.png" alt="Image 1">
+      <p class="image-title">Flow diagram of our multi-agent inverse reinforcement learning algorithm.</p>
   <!-- </div> -->
-   <br>
+   <!-- <br> -->
   <!-- <div class="image-container"> -->
-      <img src="./static/images/graphs2.png" alt="Image 2" width="650" style="display: block; margin: 0 auto;">
-      <p class="image-title">Comparing agents' (A1, A2) velocities generated by LiveNet and SMG-CBF, before and after crossing the doorway.</p>
+      <!-- <img src="./static/images/graphs2.png" alt="Image 2" width="650" style="display: block; margin: 0 auto;">
+      <p class="image-title">Comparing agents' (A1, A2) velocities generated by LiveNet and SMG-CBF, before and after crossing the doorway.</p> -->
   <!-- </div> -->
   <!-- Add more images as needed -->
 <!-- </div> -->
@@ -205,10 +214,10 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{gouru2024livenet,
-      title={LiveNet: Robust, Minimally Invasive Multi-Robot Control for Safe and Live Navigation in Constrained Environments},
-      author={Gouru, Srikar and Lakkoju, Siddharth and Chandra, Rohan},
-      journal={arXiv preprint arXiv:2412.04659},
+    <pre><code>@article{chandra2024towards,
+      title={Towards Imitation Learning in Real World Unstructured Social Mini-Games in Pedestrian Crowds},
+      author={Chandra, Rohan and Karnan, Haresh and Mehr, Negar and Stone, Peter and Biswas, Joydeep},
+      journal={arXiv preprint arXiv:2405.16439},
       year={2024}
     }
 </code></pre>
